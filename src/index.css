@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-black-deep: #0A0A0A;
+  --color-black-carbon: #121212;
+  --color-gold-metallic: #D4AF37;
+  --color-gold-soft: #C9A55C;
+  --color-white-ivory: #F5F5F5;
+  --color-gray-smoke: #A1A1A1;
+
+  --font-playfair: 'Playfair Display', serif;
+  --font-inter: 'Inter', sans-serif;
+  --font-cormorant: 'Cormorant Garamond', serif;
+}
+
+@layer base {
+  body {
+    @apply bg-black-deep text-white-ivory font-inter overflow-x-hidden antialiased;
+    margin: 0;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair font-normal;
+  }
+}
+
+/* Custom utilities */
+@layer utilities {
+  .glow-gold {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+  }
+  
+  .glow-gold-strong {
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.6);
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+  }
+}
+
+/* Hide scrollbar for clean look */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+::-webkit-scrollbar-thumb {
+  background: #121212;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
