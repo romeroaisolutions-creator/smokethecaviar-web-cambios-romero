@@ -3,10 +3,11 @@ import { Menu, X } from 'lucide-react';
 import logoImage from '../assets/brand_logo.png';
 
 const links = [
-  { href: '#inicio', label: 'Inicio' },
-  { href: '#productos', label: 'Productos' },
-  { href: '#artistas', label: 'Artistas' },
-  { href: '#conciencia', label: 'Conciencia' },
+  { href: '#eneagrama', label: 'Eneagrama' },
+  { href: '#conciencia', label: 'Sentir' },
+  { href: '#explorar', label: 'Explorar' },
+  { href: '#artistas', label: 'Sonido' },
+  { href: '#productos', label: 'Rituales' },
   { href: '#nosotros', label: 'Nosotros' },
   { href: '#contacto', label: 'Contacto' },
 ];

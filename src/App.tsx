@@ -1,5 +1,6 @@
 import Nav from './components/Nav'
 import Hero from './components/Hero'
+import Enneagram from './components/Enneagram'
 import Manifesto from './components/Manifesto'
 import Products from './components/Products'
 import Artists from './components/Artists'
@@ -7,6 +8,7 @@ import SocialProof from './components/SocialProof'
 import Process from './components/Process'
 import CallToAction from './components/CallToAction'
 import Consciousness from './components/Consciousness'
+import Explore from './components/Explore'
 import About from './components/About'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
@@ -28,14 +30,16 @@ function App() {
       <Nav />
       <main className="relative z-10">
         <Hero />
+        <Enneagram />
         <Manifesto />
+        <Consciousness />
+        <Explore />
+        <Artists />
+        <Products />
         <SocialProof />
         <Process />
-        <CallToAction />
-        <Products />
-        <Artists />
-        <Consciousness />
         <About />
+        <CallToAction />
         <Contact />
       </main>
 

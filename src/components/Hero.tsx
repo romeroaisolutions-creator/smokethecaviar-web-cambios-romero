@@ -56,21 +56,21 @@ const Hero = () => {
           </h1>
           
           <p className="text-lg lg:text-xl text-gray-smoke mb-12 hero-text font-light tracking-wide max-w-md">
-            CBD premium para quienes entienden que el bienestar es el nuevo estatus.
+            Un portal entre el arte, el sonido y la presencia.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-6 hero-text mt-8">
-            <button className="group relative px-8 py-4 bg-gold-metallic text-black-deep font-semibold rounded-xl overflow-hidden transition-all hover:glow-gold">
+            <a href="#eneagrama" className="group relative px-8 py-4 bg-gold-metallic text-black-deep font-semibold rounded-xl overflow-hidden transition-all hover:glow-gold">
               <span className="relative z-10 flex items-center justify-center gap-2">
-                Explorar colección
+                Descubrir
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </span>
               <div className="absolute inset-0 bg-gold-soft scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-out z-0"></div>
-            </button>
-            
-            <button className="px-8 py-4 bg-transparent text-white-ivory border border-white/20 rounded-xl hover:border-gold-metallic hover:text-gold-metallic transition-colors font-medium">
-              Descubrir artistas
-            </button>
+            </a>
+
+            <a href="#conciencia" className="px-8 py-4 bg-transparent text-white-ivory border border-white/20 rounded-xl hover:border-gold-metallic hover:text-gold-metallic transition-colors font-medium text-center">
+              Sentir
+            </a>
           </div>
         </div>
       </div>
