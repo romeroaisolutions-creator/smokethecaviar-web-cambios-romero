@@ -70,10 +70,13 @@ const CallToAction = () => {
           Si lo entiendes, ya estás dentro."
         </h2>
 
-        <button className="group relative px-10 py-6 md:px-16 md:py-8 bg-black-deep border border-gold-metallic text-gold-metallic uppercase tracking-[0.2em] font-semibold text-sm md:text-base rounded-full overflow-hidden transition-all duration-700 hover:border-transparent hover:text-black-deep hover:glow-gold-strong hover:scale-105 active:scale-95">
-          <span className="relative z-10 transition-colors duration-500">Entrar al mundo SMOKETHECAVIAR</span>
+        <a
+          href="#contacto"
+          className="group relative px-10 py-6 md:px-16 md:py-8 bg-black-deep border border-gold-metallic text-gold-metallic uppercase tracking-[0.2em] font-semibold text-sm md:text-base rounded-full overflow-hidden transition-all duration-700 hover:border-transparent hover:text-black-deep hover:glow-gold-strong hover:scale-105 active:scale-95"
+        >
+          <span className="relative z-10 transition-colors duration-500">Habitar el portal</span>
           <div className="absolute inset-0 bg-gold-metallic rounded-full scale-0 group-hover:scale-150 transition-transform duration-700 ease-in-out z-0 origin-center"></div>
-        </button>
+        </a>
       </div>
 
     </section>
