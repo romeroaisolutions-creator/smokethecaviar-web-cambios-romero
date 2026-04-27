@@ -12,13 +12,13 @@ const pillars = [
   },
   {
     icon: Leaf,
-    title: 'Pureza',
-    text: 'CBD premium orgánico, extracción limpia, trazabilidad total. Sin atajos.',
+    title: 'Autenticidad',
+    text: 'Diseño autoral, materiales nobles y trazabilidad total. Sin atajos, sin imitaciones.',
   },
   {
     icon: Sparkles,
     title: 'Ritual',
-    text: 'No vendemos productos: diseñamos experiencias que transforman tu relación con el descanso.',
+    text: 'No vendemos productos: diseñamos experiencias que transforman tu relación con el momento.',
   },
 ];
 
@@ -55,12 +55,12 @@ const About = () => {
     <section
       id="nosotros"
       ref={containerRef}
-      className="py-32 bg-black-carbon relative overflow-hidden border-b border-white/5 scroll-mt-20"
+      className="py-20 md:py-28 bg-black-carbon relative overflow-hidden border-b border-white/5 scroll-mt-20"
     >
       <div className="absolute top-1/3 left-0 w-[500px] h-[500px] bg-gold-metallic/5 rounded-full blur-[150px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-8 relative z-10">
-        <div className="about-header text-center mb-20">
+        <div className="about-header text-center mb-12 md:mb-14">
           <span className="text-gold-soft uppercase tracking-[0.3em] text-sm font-semibold mb-4 block">
             Nuestra Esencia
           </span>
@@ -69,7 +69,7 @@ const About = () => {
         </div>
 
         {/* Story block */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center mb-14 md:mb-20">
           <div className="about-image relative rounded-2xl overflow-hidden aspect-[4/5] border border-white/5">
             <div
               className="absolute inset-0 bg-cover bg-center"
@@ -88,13 +88,13 @@ const About = () => {
               Nacimos para redefinir el <span className="text-gold-metallic italic">lujo</span>.
             </p>
             <p className="text-gray-smoke text-lg leading-relaxed">
-              SMOKETHECAVIAR no es una marca de CBD. Es un manifiesto. Una declaración de que el verdadero estatus no se muestra: se siente.
+              SMOKETHECAVIAR no es una marca: es un manifiesto. Una declaración de que el verdadero estatus no se muestra — se siente.
             </p>
             <p className="text-gray-smoke text-lg leading-relaxed">
-              Fusionamos botánica ancestral, diseño contemporáneo e inteligencia artificial para crear rituales de bienestar dirigidos a quienes entienden que la opulencia moderna se mide en calma, presencia y claridad mental.
+              Fusionamos diseño contemporáneo, sonido generativo y geometría sagrada para crear piezas dirigidas a quienes entienden que la opulencia moderna se mide en calma, presencia y claridad mental.
             </p>
             <p className="text-gray-smoke text-lg leading-relaxed">
-              Cada gota, cada textura, cada sonido de nuestros artistas generativos fue pensado para acompañar una vida donde lo exclusivo ya no es lo que tienes, sino lo que eres.
+              Cada prenda, cada textura, cada sonido de nuestros artistas fue pensado para acompañar una vida donde lo exclusivo ya no es lo que tienes — sino lo que eres.
             </p>
           </div>
         </div>

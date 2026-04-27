@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ShoppingBag, Sparkles } from 'lucide-react';
 
 import heroImage from '../assets/main_hero.jpg';
 import logoImage from '../assets/brand_logo.png';
@@ -138,25 +138,37 @@ const Hero = () => {
             Un portal entre el arte, el sonido y la presencia.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-6 hero-text mt-8">
+          <div className="flex flex-col sm:flex-row gap-4 hero-text mt-8">
             <a
               ref={magneticRef}
               href="#eneagrama"
-              className="group relative px-8 py-4 bg-gold-metallic text-black-deep font-semibold rounded-xl overflow-hidden transition-shadow hover:glow-gold inline-flex items-center justify-center gap-2 will-change-transform"
+              className="group relative px-7 py-4 bg-gold-metallic text-black-deep font-semibold rounded-xl overflow-hidden transition-shadow hover:glow-gold inline-flex items-center justify-center gap-2 will-change-transform"
             >
               <span className="relative z-10 flex items-center gap-2">
-                Entrar al portal
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <Sparkles className="w-4 h-4" />
+                Vivir la experiencia
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </span>
               <div className="absolute inset-0 bg-gold-soft scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-out z-0"></div>
             </a>
 
             <a
-              href="#conciencia"
-              className="px-8 py-4 bg-transparent text-white-ivory border border-white/20 rounded-xl hover:border-gold-metallic hover:text-gold-metallic transition-colors font-medium text-center"
+              href="#productos"
+              className="group px-7 py-4 bg-transparent text-white-ivory border border-gold-metallic/40 rounded-xl hover:border-gold-metallic hover:bg-gold-metallic/10 hover:text-gold-metallic transition-all duration-300 font-medium inline-flex items-center justify-center gap-2"
             >
-              Sentir primero
+              <ShoppingBag className="w-4 h-4" />
+              Comprar mercancía
+              <ArrowRight className="w-4 h-4 opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 group-hover:translate-x-1 transition-all" />
             </a>
+          </div>
+
+          {/* Atajos rápidos — más interacción, menos scroll */}
+          <div className="hero-text mt-8 flex flex-wrap items-center gap-2 text-[11px] uppercase tracking-[0.25em] text-gray-smoke/70">
+            <span className="text-gold-soft/70">Saltar a</span>
+            <a href="#eneagrama" className="px-3 py-1.5 rounded-full border border-white/10 hover:border-gold-soft hover:text-gold-soft transition-colors">Eneagrama</a>
+            <a href="#conciencia" className="px-3 py-1.5 rounded-full border border-white/10 hover:border-gold-soft hover:text-gold-soft transition-colors">Sentir</a>
+            <a href="#explorar" className="px-3 py-1.5 rounded-full border border-white/10 hover:border-gold-soft hover:text-gold-soft transition-colors">Explorar</a>
+            <a href="#artistas" className="px-3 py-1.5 rounded-full border border-white/10 hover:border-gold-soft hover:text-gold-soft transition-colors">Sonido</a>
           </div>
         </div>
       </div>

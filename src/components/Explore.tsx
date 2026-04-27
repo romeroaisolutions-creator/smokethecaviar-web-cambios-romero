@@ -17,7 +17,7 @@ const paths: Path[] = [
     essence: 'Detener. Respirar. Habitar el silencio.',
     prose:
       'El primer lujo es el silencio. Un espacio donde el cuerpo se desarma, la mente se suaviza y la noche vuelve a ser templo. No se busca dormir: se busca volver.',
-    companion: { name: 'Lunar Drops', category: 'Sleep Formula' },
+    companion: { name: 'Caviar Crewneck', category: 'Sudadera Sin Capucha' },
   },
   {
     id: 'energia',
@@ -25,7 +25,7 @@ const paths: Path[] = [
     essence: 'Despertar lo que duerme.',
     prose:
       'Hay una chispa que el cuerpo recuerda antes de pensar. Moverse, encenderse, soltar. La energía no se toma: se libera. Y cuando fluye, todo lo demás se ordena solo.',
-    companion: { name: 'Kundalini Vape', category: 'Vaporizer Premium' },
+    companion: { name: 'Smoke Snapback', category: 'Gorra Snapback' },
   },
   {
     id: 'aroma',
@@ -33,7 +33,7 @@ const paths: Path[] = [
     essence: 'El espacio también vibra.',
     prose:
       'Lo que se huele se siente dos veces. El humo, la madera, la resina: memorias sin palabras. Un aroma bien elegido convierte una habitación en un altar, y un momento en un rito.',
-    companion: { name: 'Sacred Incense', category: 'Aromatic Ritual' },
+    companion: { name: 'Noir Tote Bag', category: 'Tote Minimalista' },
   },
   {
     id: 'ritual',
@@ -41,7 +41,7 @@ const paths: Path[] = [
     essence: 'El gesto que vuelve sagrado lo cotidiano.',
     prose:
       'Aplicar, respirar, esperar. El ritual no está en el objeto — está en la repetición consciente. Cuando lo cotidiano se vuelve ceremonia, la piel, el aire y la intención se alinean.',
-    companion: { name: 'Golden Ritual Balm', category: 'Topical Premium' },
+    companion: { name: 'Ritual Hoodie', category: 'Sudadera Premium' },
   },
   {
     id: 'presencia',
@@ -49,7 +49,7 @@ const paths: Path[] = [
     essence: 'Estar. Completamente.',
     prose:
       'El estado más raro. Ni recordando, ni anticipando: acá. La presencia no se fuerza, se permite. Y cuando ocurre, no necesita nada más — eso es, justamente, el lujo.',
-    companion: { name: 'The Midnight Oil', category: 'Full Spectrum CBD' },
+    companion: { name: 'Caviar Tee Black', category: 'Playera Oversize' },
   },
 ];
 
@@ -172,12 +172,12 @@ const Explore = () => {
     <section
       id="explorar"
       ref={sectionRef}
-      className="py-32 md:py-40 bg-black-deep relative overflow-hidden border-b border-white/5 scroll-mt-20"
+      className="py-20 md:py-28 bg-black-deep relative overflow-hidden border-b border-white/5 scroll-mt-20"
     >
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gold-metallic/5 rounded-full blur-[180px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-6 md:px-8 relative z-10">
-        <div className="explore-header text-center mb-16 md:mb-20">
+        <div className="explore-header text-center mb-10 md:mb-14">
           <span className="text-gold-soft uppercase tracking-[0.3em] text-sm font-semibold mb-4 block">
             Exploración
           </span>
@@ -190,7 +190,7 @@ const Explore = () => {
           </p>
         </div>
 
-        <div className="portals-row flex flex-wrap justify-center gap-6 md:gap-12 mb-20 md:mb-24">
+        <div className="portals-row flex flex-wrap justify-center gap-6 md:gap-12 mb-10 md:mb-14">
           {paths.map((p, i) => (
             <Portal
               key={p.id}
@@ -211,11 +211,11 @@ const Explore = () => {
             {active.essence}
           </h3>
 
-          <p className="text-gray-smoke text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-16">
+          <p className="text-gray-smoke text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-10">
             {active.prose}
           </p>
 
-          <div className="inline-flex flex-col items-center gap-4 pt-10 border-t border-white/10 w-full max-w-md mx-auto">
+          <div className="inline-flex flex-col items-center gap-4 pt-6 border-t border-white/10 w-full max-w-md mx-auto">
             <span className="text-xs uppercase tracking-[0.3em] text-gray-smoke">
               Acompañante del camino
             </span>
@@ -234,9 +234,9 @@ const Explore = () => {
 
             <a
               href="#productos"
-              className="mt-3 group inline-flex items-center gap-2 text-sm uppercase tracking-[0.25em] text-gold-soft hover:text-gold-metallic transition-colors"
+              className="mt-2 group inline-flex items-center gap-2 text-sm uppercase tracking-[0.25em] text-gold-soft hover:text-gold-metallic transition-colors"
             >
-              Conocer el ritual
+              Conocer la prenda
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>

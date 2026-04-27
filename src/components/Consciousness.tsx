@@ -1,7 +1,7 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { Moon, Wind, Flame, Eye, Infinity as InfinityIcon, Heart } from 'lucide-react';
-import mysticImg from '../assets/hero_mystic_man_1776035894137.png';
+import sentirImg from '../assets/sentir.jpg';
 
 const practices = [
   {
@@ -44,6 +44,7 @@ const mantras = [
 
 const Consciousness = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [activePractice, setActivePractice] = useState(0);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -52,11 +53,11 @@ const Consciousness = () => {
         { y: 0, opacity: 1, duration: 1, scrollTrigger: { trigger: '.conscious-header', start: 'top 85%' } }
       );
 
-      gsap.fromTo('.practice-card',
-        { y: 40, opacity: 0 },
+      gsap.fromTo('.practice-pill',
+        { y: 20, opacity: 0 },
         {
-          y: 0, opacity: 1, duration: 1, stagger: 0.12, ease: 'power3.out',
-          scrollTrigger: { trigger: '.practices-grid', start: 'top 75%' },
+          y: 0, opacity: 1, duration: 0.7, stagger: 0.06, ease: 'power3.out',
+          scrollTrigger: { trigger: '.practices-row', start: 'top 80%' },
         }
       );
 
@@ -72,17 +73,19 @@ const Consciousness = () => {
     return () => ctx.revert();
   }, []);
 
+  const ActiveIcon = practices[activePractice].icon;
+
   return (
     <section
       id="conciencia"
       ref={containerRef}
-      className="py-32 bg-black-deep relative overflow-hidden border-b border-white/5 scroll-mt-20"
+      className="py-20 md:py-28 bg-black-deep relative overflow-hidden border-b border-white/5 scroll-mt-20"
     >
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-purple-900/10 rounded-full blur-[180px] pointer-events-none"></div>
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gold-metallic/5 rounded-full blur-[150px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-8 relative z-10">
-        <div className="conscious-header text-center mb-24">
+        <div className="conscious-header text-center mb-14 md:mb-16">
           <span className="text-gold-soft uppercase tracking-[0.3em] text-sm font-semibold mb-4 block">
             Ritual interior
           </span>
@@ -95,10 +98,10 @@ const Consciousness = () => {
         </div>
 
         {/* Intro block */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 mb-16 md:mb-20 items-center">
           <div
-            className="aspect-[4/5] rounded-2xl bg-cover bg-center border border-white/5 glow-gold"
-            style={{ backgroundImage: `url(${mysticImg})` }}
+            className="aspect-square rounded-2xl bg-cover bg-center border border-white/5 glow-gold"
+            style={{ backgroundImage: `url(${sentirImg})` }}
           ></div>
           <div className="space-y-6 font-cormorant">
             <p className="text-3xl md:text-4xl font-light leading-snug text-white-ivory">
@@ -108,7 +111,7 @@ const Consciousness = () => {
               En un mundo de ruido permanente, la verdadera disrupción es el silencio. Cada respiración consciente es una revolución íntima, un regreso al centro que nunca se fue.
             </p>
             <p className="text-lg text-gray-smoke leading-relaxed">
-              El yoga no es estiramiento: es unión. La meditación no es ausencia: es presencia absoluta. Nuestro CBD acompaña el descenso hacia ese estado primordial donde cuerpo y espíritu comparten la misma frecuencia.
+              El yoga no es estiramiento: es unión. La meditación no es ausencia: es presencia absoluta. Nuestros rituales acompañan el descenso hacia ese estado primordial donde cuerpo y espíritu comparten la misma frecuencia.
             </p>
             <div className="pt-4 flex gap-4">
               <span className="px-4 py-2 rounded-full border border-gold-metallic/30 text-gold-soft text-xs tracking-widest uppercase">Yoga</span>
@@ -118,37 +121,54 @@ const Consciousness = () => {
           </div>
         </div>
 
-        {/* Practices grid */}
-        <div className="practices-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
-          {practices.map((p) => {
-            const Icon = p.icon;
-            return (
-              <div
-                key={p.title}
-                className="practice-card group relative p-8 rounded-2xl bg-black-carbon border border-white/5 hover:border-gold-metallic/30 transition-all duration-500 hover:-translate-y-1"
-              >
-                <div className="w-14 h-14 rounded-full bg-gold-metallic/10 border border-gold-metallic/20 flex items-center justify-center mb-6 text-gold-metallic group-hover:glow-gold transition-all">
-                  <Icon className="w-6 h-6" />
-                </div>
-                <h3 className="text-2xl font-playfair mb-3">{p.title}</h3>
-                <p className="text-gray-smoke leading-relaxed text-sm">{p.text}</p>
-              </div>
-            );
-          })}
+        {/* Practices selector — interactivo, compacto */}
+        <div className="mb-16 md:mb-20">
+          <div className="practices-row flex flex-wrap justify-center gap-2 md:gap-3 mb-10">
+            {practices.map((p, i) => {
+              const Icon = p.icon;
+              const isActive = activePractice === i;
+              return (
+                <button
+                  key={p.title}
+                  onClick={() => setActivePractice(i)}
+                  className={`practice-pill group inline-flex items-center gap-2 px-4 py-2.5 rounded-full border text-xs md:text-sm uppercase tracking-[0.2em] transition-all duration-300 ${
+                    isActive
+                      ? 'border-gold-metallic bg-gold-metallic/10 text-gold-metallic shadow-[0_0_18px_rgba(212,175,55,0.18)]'
+                      : 'border-white/10 text-gray-smoke hover:border-gold-soft/60 hover:text-white-ivory'
+                  }`}
+                >
+                  <Icon className="w-3.5 h-3.5" />
+                  {p.title}
+                </button>
+              );
+            })}
+          </div>
+
+          <div className="max-w-2xl mx-auto text-center min-h-[140px]">
+            <div className="w-14 h-14 mx-auto rounded-full bg-gold-metallic/10 border border-gold-metallic/30 flex items-center justify-center text-gold-metallic glow-gold mb-5">
+              <ActiveIcon className="w-6 h-6" />
+            </div>
+            <h3 className="text-3xl md:text-4xl font-playfair text-white-ivory mb-3 text-glow">
+              {practices[activePractice].title}
+            </h3>
+            <p className="text-gray-smoke text-base md:text-lg leading-relaxed font-cormorant italic">
+              {practices[activePractice].text}
+            </p>
+          </div>
         </div>
 
         {/* Mantras */}
-        <div className="mantras-block text-center max-w-3xl mx-auto py-16 border-t border-white/5">
-          <span className="text-gold-soft uppercase tracking-[0.3em] text-xs font-semibold mb-10 block">
+        <div className="mantras-block text-center max-w-3xl mx-auto py-10 md:py-12 border-t border-white/5">
+          <span className="text-gold-soft uppercase tracking-[0.3em] text-xs font-semibold mb-6 md:mb-8 block">
             Mantras sagrados
           </span>
-          <div className="space-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {mantras.map((m) => (
               <div key={m.text} className="mantra-line">
-                <p className="text-3xl md:text-4xl font-cormorant italic text-gold-metallic text-glow mb-1">
+                <p className="text-2xl md:text-3xl font-cormorant italic text-gold-metallic text-glow mb-1">
                   {m.text}
                 </p>
-                <p className="text-sm text-gray-smoke tracking-wide">{m.meaning}</p>
+                <p className="text-xs text-gray-smoke tracking-wide">{m.meaning}</p>
               </div>
             ))}
           </div>

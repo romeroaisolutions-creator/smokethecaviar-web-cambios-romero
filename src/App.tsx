@@ -4,8 +4,6 @@ import Enneagram from './components/Enneagram'
 import Manifesto from './components/Manifesto'
 import Products from './components/Products'
 import Artists from './components/Artists'
-import SocialProof from './components/SocialProof'
-import Process from './components/Process'
 import CallToAction from './components/CallToAction'
 import Consciousness from './components/Consciousness'
 import Explore from './components/Explore'
@@ -36,8 +34,6 @@ function App() {
         <Explore />
         <Artists />
         <Products />
-        <SocialProof />
-        <Process />
         <About />
         <CallToAction />
         <Contact />

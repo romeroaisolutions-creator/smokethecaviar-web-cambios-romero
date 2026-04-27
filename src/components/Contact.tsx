@@ -93,12 +93,12 @@ const Contact = () => {
     <section
       id="contacto"
       ref={containerRef}
-      className="py-32 bg-black-deep relative overflow-hidden scroll-mt-20"
+      className="py-20 md:py-28 bg-black-deep relative overflow-hidden scroll-mt-20"
     >
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-gold-metallic/10 rounded-full blur-[180px] pointer-events-none"></div>
 
       <div className="max-w-6xl mx-auto px-8 relative z-10">
-        <div className="contact-header text-center mb-20">
+        <div className="contact-header text-center mb-12 md:mb-14">
           <span className="text-gold-soft uppercase tracking-[0.3em] text-sm font-semibold mb-4 block">
             Conéctate
           </span>
@@ -109,7 +109,7 @@ const Contact = () => {
         </div>
 
         {/* Socials */}
-        <div className="socials-grid grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+        <div className="socials-grid grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 md:mb-14">
           {socials.map((s) => {
             const Icon = s.icon;
             const isExternal = s.url !== '#';

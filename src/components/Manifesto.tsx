@@ -3,7 +3,7 @@ import gsap from 'gsap';
 
 const Manifesto = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const textRefs = useRef<(HTMLParagraphElement | null)[]>([]);
+  const textRefs = useRef<(HTMLElement | null)[]>([]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -31,30 +31,38 @@ const Manifesto = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-40 bg-black-deep flex items-center justify-center relative overflow-hidden border-b border-white/5">
+    <section ref={containerRef} className="py-24 md:py-32 bg-black-deep flex items-center justify-center relative overflow-hidden border-b border-white/5">
       {/* Subtle background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gold-metallic/5 rounded-full blur-[120px] pointer-events-none"></div>
 
-      <div className="max-w-4xl mx-auto px-8 text-center relative z-10 flex flex-col gap-12 font-cormorant text-3xl md:text-5xl leading-relaxed text-white-ivory">
+      <div className="max-w-4xl mx-auto px-8 text-center relative z-10 flex flex-col gap-8 md:gap-10 font-cormorant text-3xl md:text-5xl leading-relaxed text-white-ivory">
         <p ref={el => { textRefs.current[0] = el; }} className="font-light">
           Durante años, el lujo fue apariencia.
         </p>
-        
+
         <p ref={el => { textRefs.current[1] = el; }} className="font-medium text-gold-soft text-glow">
           Hoy, el lujo es cómo te sientes.
         </p>
-        
-        <p ref={el => { textRefs.current[2] = el; }} className="font-light text-2xl md:text-4xl text-gray-smoke mt-10">
-          SMOKETHECAVIAR nace para quienes entienden que el bienestar no es básico.
-        </p>
-        
-        <p ref={el => { textRefs.current[3] = el; }} className="italic text-gold-metallic">
+
+        {/* Frase distintiva */}
+        <blockquote
+          ref={el => { textRefs.current[2] = el; }}
+          className="relative mx-auto max-w-3xl px-6 md:px-10 py-8 md:py-10 rounded-2xl border border-gold-metallic/25 bg-gradient-to-br from-black-carbon/40 via-transparent to-black-carbon/40 backdrop-blur-sm"
+        >
+          <span aria-hidden className="absolute -top-3 left-6 text-gold-metallic/70 text-5xl font-playfair leading-none select-none">"</span>
+          <p className="font-cormorant italic text-2xl md:text-4xl leading-snug text-white-ivory">
+            Somos sombra con propósito y luz que nunca se olvida.
+          </p>
+          <span aria-hidden className="absolute -bottom-7 right-6 text-gold-metallic/70 text-5xl font-playfair leading-none select-none">"</span>
+        </blockquote>
+
+        <p ref={el => { textRefs.current[3] = el; }} className="italic text-gold-metallic text-3xl md:text-5xl">
           Es exclusivo.
         </p>
-        
-        <div className="pt-16 flex flex-col gap-6">
+
+        <div className="pt-6 flex flex-col gap-4">
           <p ref={el => { textRefs.current[4] = el; }} className="font-light text-2xl md:text-3xl text-gray-smoke">
-            No vendemos CBD.
+            No vendemos productos.
           </p>
           <p ref={el => { textRefs.current[5] = el; }} className="font-semibold text-5xl md:text-6xl text-white-ivory text-glow tracking-wide">
             Creamos rituales.

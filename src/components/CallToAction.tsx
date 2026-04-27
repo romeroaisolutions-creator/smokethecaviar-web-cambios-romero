@@ -40,7 +40,7 @@ const CallToAction = () => {
   }));
 
   return (
-    <section ref={containerRef} className="py-40 bg-[#020202] relative overflow-hidden flex items-center justify-center min-h-[80vh]">
+    <section ref={containerRef} className="py-24 md:py-32 bg-[#020202] relative overflow-hidden flex items-center justify-center min-h-[60vh]">
       
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold-metallic/5 rounded-full blur-[150px] pointer-events-none"></div>
@@ -66,7 +66,7 @@ const CallToAction = () => {
         <h2 className="text-4xl md:text-6xl font-cormorant italic text-gray-smoke mb-4 font-light">
           "Si lo necesitas, <span className="text-white-ivory">no es para ti.</span>
         </h2>
-        <h2 className="text-4xl md:text-6xl font-cormorant italic text-gold-metallic mb-16 text-glow">
+        <h2 className="text-4xl md:text-6xl font-cormorant italic text-gold-metallic mb-10 text-glow">
           Si lo entiendes, ya estás dentro."
         </h2>
 

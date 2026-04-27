@@ -34,13 +34,13 @@ const Artists = () => {
   }, []);
 
   return (
-    <section id="artistas" ref={containerRef} className="py-32 bg-transparent relative overflow-hidden scroll-mt-20">
+    <section id="artistas" ref={containerRef} className="py-20 md:py-28 bg-transparent relative overflow-hidden scroll-mt-20">
       {/* Subtle violet/gold gradients */}
       <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-purple-900/10 rounded-full blur-[150px] mix-blend-screen pointer-events-none"></div>
       <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-gold-metallic/5 rounded-full blur-[150px] mix-blend-screen pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-8 relative z-10">
-        <div className="artist-header text-center mb-24">
+        <div className="artist-header text-center mb-12 md:mb-16">
           <span className="text-gold-soft uppercase tracking-[0.3em] text-sm font-semibold mb-4 block">Digital Gods</span>
           <h2 className="text-5xl md:text-6xl font-playfair text-white-ivory mb-6">Musa Generativa</h2>
           <p className="text-gray-smoke max-w-2xl mx-auto text-lg leading-relaxed">

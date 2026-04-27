@@ -3,15 +3,15 @@ import gsap from 'gsap';
 
 /* ── Pilares del Eneagrama Dorado ── */
 const pillars = [
-  { label: 'Cuerpo',     description: 'El templo físico. Donde el ritual comienza y la transformación se ancla.' },
-  { label: 'Mente',      description: 'Claridad sin ruido. El pensamiento elevado que precede toda creación.' },
-  { label: 'Espíritu',   description: 'La chispa invisible que conecta todo. Presencia pura, sin forma.' },
-  { label: 'Emoción',    description: 'Sentir sin miedo. La inteligencia del corazón como brújula.' },
-  { label: 'Voluntad',   description: 'La fuerza silenciosa que sostiene cada decisión consciente.' },
-  { label: 'Conexión',   description: 'El hilo dorado entre almas que vibran en la misma frecuencia.' },
-  { label: 'Abundancia', description: 'Equilibrio entre lo espiritual y lo material. Recibir sin culpa.' },
-  { label: 'Conciencia', description: 'Despertar. Ver más allá de lo visible. Expandir la percepción.' },
-  { label: 'Amor',       description: 'La frecuencia más alta. El motor que transforma todo lo que toca.' },
+  { label: 'Cuerpo',        description: 'El templo físico. Donde el ritual comienza y la transformación se ancla.' },
+  { label: 'Mente',         description: 'Claridad sin ruido. El pensamiento elevado que precede toda creación.' },
+  { label: 'Espíritu',      description: 'La chispa invisible que conecta todo. Presencia pura, sin forma.' },
+  { label: 'Luz',           description: 'La frecuencia que ilumina lo que merece ser visto. Brilla sin pedir permiso.' },
+  { label: 'Sombra',        description: 'Lo que no se ve también es sagrado. La sombra es donde nace la profundidad.' },
+  { label: 'Unión',         description: 'El hilo dorado entre almas que vibran en la misma frecuencia.' },
+  { label: 'Propósito',     description: 'La razón silenciosa que sostiene cada paso. Brújula del alma.' },
+  { label: 'Creación',      description: 'El acto de dar forma a lo invisible. Cada gesto es una obra.' },
+  { label: 'Trascendencia', description: 'Cruzar el umbral. Lo que queda cuando todo lo demás se disuelve.' },
 ];
 
 /* ── Geometría: Amor (índice 8) arriba ── */
@@ -434,14 +434,14 @@ const Enneagram = () => {
     <section
       id="eneagrama"
       ref={sectionRef}
-      className="py-32 md:py-40 bg-black-deep relative overflow-hidden border-b border-white/5 scroll-mt-20"
+      className="py-20 md:py-28 bg-black-deep relative overflow-hidden border-b border-white/5 scroll-mt-20"
     >
       {/* Ambient glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-gold-metallic/5 rounded-full blur-[200px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
         {/* Header */}
-        <div className="enn-header text-center mb-12 md:mb-16">
+        <div className="enn-header text-center mb-8 md:mb-12">
           <span className="text-gold-soft uppercase tracking-[0.3em] text-sm font-semibold mb-4 block">
             Geometría Sagrada
           </span>
@@ -458,7 +458,7 @@ const Enneagram = () => {
         </div>
 
         {/* Eneagrama centrado y grande, con label flotante en el centro */}
-        <div className="enn-svg-wrap relative mx-auto mb-12 md:mb-16 w-full max-w-[640px] aspect-square">
+        <div className="enn-svg-wrap relative mx-auto mb-8 md:mb-12 w-full max-w-[560px] aspect-square">
           <EnneagramSVG activeIndex={activeIndex} onSelect={handleSelect} />
 
           {/* Label flotante en el centro del eneagrama */}
@@ -477,7 +477,7 @@ const Enneagram = () => {
         </div>
 
         {/* Descripción debajo del eneagrama */}
-        <div className="max-w-2xl mx-auto text-center mb-12 md:mb-16 min-h-[120px]">
+        <div className="max-w-2xl mx-auto text-center mb-8 md:mb-10 min-h-[120px]">
           {activeIndex !== null ? (
             <div ref={descRef}>
               <span className="text-gold-metallic uppercase tracking-[0.25em] text-xs font-semibold mb-4 block">
@@ -510,11 +510,11 @@ const Enneagram = () => {
           </div>
         </div>
 
-        {/* Prose */}
-        <div className="enn-prose max-w-3xl mx-auto text-center space-y-8">
+        {/* Prose — más corto, con atajos de acción */}
+        <div className="enn-prose max-w-3xl mx-auto text-center space-y-6">
           <div className="w-12 h-[1px] bg-gold-metallic/40 mx-auto" />
 
-          <p className="text-2xl md:text-3xl font-cormorant leading-relaxed text-white-ivory">
+          <p className="text-xl md:text-2xl font-cormorant leading-relaxed text-white-ivory">
             Nueve puntos. Un solo movimiento.
             <br />
             <span className="text-gold-metallic italic">
@@ -522,18 +522,26 @@ const Enneagram = () => {
             </span>
           </p>
 
-          <p className="text-gray-smoke text-lg leading-relaxed max-w-2xl mx-auto">
-            El Eneagrama Dorado representa la geometría de la evolución humana:
-            cuerpo, mente y espíritu en equilibrio perpetuo. El dorado no es decoración —
-            es la frecuencia de la abundancia espiritual y material vibrando al unísono.
-          </p>
-
-          <p className="text-gray-smoke text-lg leading-relaxed max-w-2xl mx-auto">
-            Cada producto, cada artista, cada ritual de SMOKETHECAVIAR nace de este centro.
-            Es una expresión de amor elevado, conexión profunda y expansión de conciencia.
-          </p>
-
-          <div className="w-12 h-[1px] bg-gold-metallic/40 mx-auto" />
+          <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
+            <a
+              href="#conciencia"
+              className="px-5 py-2.5 rounded-full border border-gold-metallic/40 text-gold-soft text-xs uppercase tracking-[0.25em] hover:bg-gold-metallic/10 hover:text-gold-metallic transition-all"
+            >
+              Sentir el ritual
+            </a>
+            <a
+              href="#explorar"
+              className="px-5 py-2.5 rounded-full border border-gold-metallic/40 text-gold-soft text-xs uppercase tracking-[0.25em] hover:bg-gold-metallic/10 hover:text-gold-metallic transition-all"
+            >
+              Elegir tu puerta
+            </a>
+            <a
+              href="#productos"
+              className="px-5 py-2.5 rounded-full bg-gold-metallic text-black-deep text-xs uppercase tracking-[0.25em] font-semibold hover:glow-gold transition-all"
+            >
+              Comprar mercancía
+            </a>
+          </div>
         </div>
       </div>
     </section>
