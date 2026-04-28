@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 type Path = {
   id: string;
@@ -232,13 +233,13 @@ const Explore = () => {
               </div>
             </div>
 
-            <a
-              href="#productos"
+            <Link
+              to="/rituales"
               className="mt-2 group inline-flex items-center gap-2 text-sm uppercase tracking-[0.25em] text-gold-soft hover:text-gold-metallic transition-colors"
             >
               Conocer la prenda
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import logoImage from '../assets/brand_logo.png';
 
 type Lang = 'es' | 'en';
@@ -106,15 +107,20 @@ const Footer = () => {
     <footer className="bg-black-deep py-12 border-t border-white/5 relative z-10">
       <div className="max-w-7xl mx-auto px-8 flex flex-col items-center justify-center">
 
-        <img src={logoImage} alt="SMOKETHECAVIAR" className="h-10 mb-8 mix-blend-screen opacity-50 hover:opacity-100 transition-opacity duration-300" />
+        <img src={logoImage} alt="SMOKETHECAVIAR" className="h-10 mb-6 mix-blend-screen opacity-50 hover:opacity-100 transition-opacity duration-300" />
+
+        {/* Manifesto closing line */}
+        <p className="font-cormorant italic text-lg md:text-xl text-gold-metallic/80 text-center max-w-xl mb-10 leading-snug px-4">
+          "Somos sombra con propósito y luz que nunca se olvida."
+        </p>
 
         <div className="flex flex-wrap justify-center gap-6 md:gap-8 mb-10 text-xs md:text-sm text-gray-smoke tracking-widest uppercase font-semibold">
-          <a href="#inicio" className="hover:text-gold-metallic transition-colors">{copy.nav.inicio}</a>
-          <a href="#productos" className="hover:text-gold-metallic transition-colors">{copy.nav.productos}</a>
-          <a href="#artistas" className="hover:text-gold-metallic transition-colors">{copy.nav.artistas}</a>
-          <a href="#conciencia" className="hover:text-gold-metallic transition-colors">{copy.nav.conciencia}</a>
-          <a href="#nosotros" className="hover:text-gold-metallic transition-colors">{copy.nav.nosotros}</a>
-          <a href="#contacto" className="hover:text-gold-metallic transition-colors">{copy.nav.contacto}</a>
+          <Link to="/" className="hover:text-gold-metallic transition-colors">{copy.nav.inicio}</Link>
+          <Link to="/rituales" className="hover:text-gold-metallic transition-colors">{copy.nav.productos}</Link>
+          <Link to="/sonido" className="hover:text-gold-metallic transition-colors">{copy.nav.artistas}</Link>
+          <Link to="/sentir" className="hover:text-gold-metallic transition-colors">{copy.nav.conciencia}</Link>
+          <Link to="/nosotros" className="hover:text-gold-metallic transition-colors">{copy.nav.nosotros}</Link>
+          <Link to="/contacto" className="hover:text-gold-metallic transition-colors">{copy.nav.contacto}</Link>
         </div>
 
         {/* Language switcher */}

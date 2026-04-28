@@ -1,47 +1,60 @@
-import Nav from './components/Nav'
-import Hero from './components/Hero'
-import Enneagram from './components/Enneagram'
-import Manifesto from './components/Manifesto'
-import Products from './components/Products'
-import Artists from './components/Artists'
-import CallToAction from './components/CallToAction'
-import Consciousness from './components/Consciousness'
-import Explore from './components/Explore'
-import About from './components/About'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
-import ShaderBackground from './components/ui/shader-background'
-import { useEffect } from 'react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Nav from './components/Nav';
+import Footer from './components/Footer';
+import ShaderBackground from './components/ui/shader-background';
+import HomePage from './pages/HomePage';
+import HistoriaPage from './pages/HistoriaPage';
+import EneagramaPage from './pages/EneagramaPage';
+import SentirPage from './pages/SentirPage';
+import ExplorarPage from './pages/ExplorarPage';
+import SonidoPage from './pages/SonidoPage';
+import RitualesPage from './pages/RitualesPage';
+import NosotrosPage from './pages/NosotrosPage';
+import ContactoPage from './pages/ContactoPage';
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+    ScrollTrigger.refresh();
+  }, [pathname]);
+  return null;
+};
+
+const Shell = () => (
+  <div className="bg-transparent text-white-ivory min-h-screen relative">
+    <ShaderBackground />
+    <Nav />
+    <ScrollToTop />
+    <div className="relative z-10">
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/historia" element={<HistoriaPage />} />
+        <Route path="/eneagrama" element={<EneagramaPage />} />
+        <Route path="/sentir" element={<SentirPage />} />
+        <Route path="/explorar" element={<ExplorarPage />} />
+        <Route path="/sonido" element={<SonidoPage />} />
+        <Route path="/rituales" element={<RitualesPage />} />
+        <Route path="/nosotros" element={<NosotrosPage />} />
+        <Route path="/contacto" element={<ContactoPage />} />
+        <Route path="*" element={<HomePage />} />
+      </Routes>
+    </div>
+    <Footer />
+  </div>
+);
 
 function App() {
-  useEffect(() => {
-    // Global scroll animations setup can go here
-  }, [])
-
   return (
-    <div className="bg-transparent text-white-ivory min-h-screen relative">
-      <ShaderBackground />
-      <Nav />
-      <main className="relative z-10">
-        <Hero />
-        <Enneagram />
-        <Manifesto />
-        <Consciousness />
-        <Explore />
-        <Artists />
-        <Products />
-        <About />
-        <CallToAction />
-        <Contact />
-      </main>
-
-      <Footer />
-    </div>
-  )
+    <BrowserRouter>
+      <Shell />
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

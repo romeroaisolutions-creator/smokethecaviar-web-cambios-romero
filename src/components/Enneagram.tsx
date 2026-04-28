@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
+import { Link } from 'react-router-dom';
 
 /* ── Pilares del Eneagrama Dorado ── */
 const pillars = [
@@ -523,24 +524,25 @@ const Enneagram = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
-            <a
-              href="#conciencia"
-              className="px-5 py-2.5 rounded-full border border-gold-metallic/40 text-gold-soft text-xs uppercase tracking-[0.25em] hover:bg-gold-metallic/10 hover:text-gold-metallic transition-all"
+            <Link
+              to="/sentir"
+              className="group px-5 py-2.5 rounded-full border border-gold-metallic/40 text-gold-soft text-xs uppercase tracking-[0.25em] hover:bg-gold-metallic/10 hover:text-gold-metallic hover:scale-105 hover:border-gold-metallic transition-all duration-300"
             >
               Sentir el ritual
-            </a>
-            <a
-              href="#explorar"
-              className="px-5 py-2.5 rounded-full border border-gold-metallic/40 text-gold-soft text-xs uppercase tracking-[0.25em] hover:bg-gold-metallic/10 hover:text-gold-metallic transition-all"
+            </Link>
+            <Link
+              to="/explorar"
+              className="group px-5 py-2.5 rounded-full border border-gold-metallic/40 text-gold-soft text-xs uppercase tracking-[0.25em] hover:bg-gold-metallic/10 hover:text-gold-metallic hover:scale-105 hover:border-gold-metallic transition-all duration-300"
             >
               Elegir tu puerta
-            </a>
-            <a
-              href="#productos"
-              className="px-5 py-2.5 rounded-full bg-gold-metallic text-black-deep text-xs uppercase tracking-[0.25em] font-semibold hover:glow-gold transition-all"
+            </Link>
+            <Link
+              to="/rituales"
+              className="group relative px-5 py-2.5 rounded-full bg-gold-metallic text-black-deep text-xs uppercase tracking-[0.25em] font-semibold hover:glow-gold hover:scale-105 transition-all duration-300 overflow-hidden"
             >
-              Comprar mercancía
-            </a>
+              <span className="relative z-10">Comprar mercancía</span>
+              <span aria-hidden className="absolute inset-y-0 -left-1/3 w-1/3 bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 opacity-0 group-hover:opacity-100 group-hover:translate-x-[400%] transition-all duration-[900ms] ease-out" />
+            </Link>
           </div>
         </div>
       </div>

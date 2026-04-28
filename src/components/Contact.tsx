@@ -161,16 +161,17 @@ const Contact = () => {
             <button
               type="submit"
               disabled={sent}
-              className="w-full py-4 bg-gold-metallic text-black-deep font-semibold rounded-xl flex items-center justify-center gap-2 hover:scale-[1.01] active:scale-95 transition-transform glow-gold disabled:opacity-70"
+              className="group relative w-full py-4 bg-gold-metallic text-black-deep font-semibold rounded-xl flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-95 transition-all duration-300 glow-gold disabled:opacity-70 overflow-hidden hover:shadow-[0_0_30px_rgba(212,175,55,0.5)]"
             >
               {sent ? (
                 <>Enviado — Gracias</>
               ) : (
                 <>
-                  <Send className="w-4 h-4" />
+                  <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300" />
                   Enviar mensaje
                 </>
               )}
+              <span aria-hidden className="absolute inset-y-0 -left-1/3 w-1/3 bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 opacity-0 group-hover:opacity-100 group-hover:translate-x-[400%] transition-all duration-[1100ms] ease-out" />
             </button>
           </div>
         </form>

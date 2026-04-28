@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ArrowRight, ShoppingBag, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 import heroImage from '../assets/main_hero.jpg';
 import logoImage from '../assets/brand_logo.png';
@@ -11,7 +12,7 @@ const Hero = () => {
   const textRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
-  const magneticRef = useRef<HTMLAnchorElement>(null);
+  const magneticRef = useRef<HTMLAnchorElement | null>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -84,7 +85,7 @@ const Hero = () => {
 
   // Magnetic CTA effect
   useEffect(() => {
-    const el = magneticRef.current;
+    const el = magneticRef.current as HTMLElement | null;
     if (!el) return;
 
     const onEnter = () => gsap.to(el, { scale: 1.05, duration: 0.4, ease: 'power3.out' });
@@ -120,7 +121,7 @@ const Hero = () => {
             <img src={brandTextImg} alt="SMOKETHECAVIAR" className="h-8 md:h-10 object-contain" />
           </div>
 
-          <h1 className="text-5xl lg:text-7xl mb-8 leading-tight hero-text text-glow">
+          <h1 className="text-5xl lg:text-7xl mb-6 leading-tight hero-text text-glow">
             El lujo no se consume. <br />
             <span
               className="hero-sweep bg-clip-text text-transparent inline-block"
@@ -134,41 +135,49 @@ const Hero = () => {
             </span>
           </h1>
 
-          <p className="text-lg lg:text-xl text-gray-smoke mb-12 hero-text font-light tracking-wide max-w-md">
+          {/* Frase del manifesto — visible desde la entrada */}
+          <p className="hero-text font-cormorant italic text-xl lg:text-2xl text-gold-metallic/90 mb-4 max-w-md leading-snug">
+            "Somos sombra con propósito y luz que nunca se olvida."
+          </p>
+
+          <p className="text-lg lg:text-xl text-gray-smoke mb-10 hero-text font-light tracking-wide max-w-md">
             Un portal entre el arte, el sonido y la presencia.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 hero-text mt-8">
-            <a
-              ref={magneticRef}
-              href="#eneagrama"
-              className="group relative px-7 py-4 bg-gold-metallic text-black-deep font-semibold rounded-xl overflow-hidden transition-shadow hover:glow-gold inline-flex items-center justify-center gap-2 will-change-transform"
+          <div className="flex flex-col sm:flex-row gap-4 hero-text mt-6">
+            <Link
+              ref={magneticRef as React.Ref<HTMLAnchorElement>}
+              to="/eneagrama"
+              className="group relative px-7 py-4 bg-gold-metallic text-black-deep font-semibold rounded-xl overflow-hidden transition-all duration-300 hover:glow-gold inline-flex items-center justify-center gap-2 will-change-transform shadow-[0_0_0_rgba(212,175,55,0)] hover:shadow-[0_0_30px_rgba(212,175,55,0.45)]"
             >
               <span className="relative z-10 flex items-center gap-2">
-                <Sparkles className="w-4 h-4" />
+                <Sparkles className="w-4 h-4 group-hover:rotate-12 transition-transform duration-500" />
                 Vivir la experiencia
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </span>
               <div className="absolute inset-0 bg-gold-soft scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-out z-0"></div>
-            </a>
+              {/* Shimmer sweep on hover */}
+              <span aria-hidden className="absolute inset-y-0 -left-1/3 w-1/3 bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 opacity-0 group-hover:opacity-100 group-hover:translate-x-[300%] transition-all duration-[900ms] ease-out z-10" />
+            </Link>
 
-            <a
-              href="#productos"
-              className="group px-7 py-4 bg-transparent text-white-ivory border border-gold-metallic/40 rounded-xl hover:border-gold-metallic hover:bg-gold-metallic/10 hover:text-gold-metallic transition-all duration-300 font-medium inline-flex items-center justify-center gap-2"
+            <Link
+              to="/rituales"
+              className="group relative px-7 py-4 bg-transparent text-white-ivory border border-gold-metallic/40 rounded-xl hover:border-gold-metallic hover:bg-gold-metallic/10 hover:text-gold-metallic transition-all duration-300 font-medium inline-flex items-center justify-center gap-2 overflow-hidden"
             >
-              <ShoppingBag className="w-4 h-4" />
+              <ShoppingBag className="w-4 h-4 group-hover:scale-110 transition-transform" />
               Comprar mercancía
               <ArrowRight className="w-4 h-4 opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 group-hover:translate-x-1 transition-all" />
-            </a>
+              <span aria-hidden className="absolute inset-0 rounded-xl ring-1 ring-gold-metallic/0 group-hover:ring-gold-metallic/40 group-hover:ring-offset-2 group-hover:ring-offset-transparent transition-all duration-300" />
+            </Link>
           </div>
 
           {/* Atajos rápidos — más interacción, menos scroll */}
           <div className="hero-text mt-8 flex flex-wrap items-center gap-2 text-[11px] uppercase tracking-[0.25em] text-gray-smoke/70">
             <span className="text-gold-soft/70">Saltar a</span>
-            <a href="#eneagrama" className="px-3 py-1.5 rounded-full border border-white/10 hover:border-gold-soft hover:text-gold-soft transition-colors">Eneagrama</a>
-            <a href="#conciencia" className="px-3 py-1.5 rounded-full border border-white/10 hover:border-gold-soft hover:text-gold-soft transition-colors">Sentir</a>
-            <a href="#explorar" className="px-3 py-1.5 rounded-full border border-white/10 hover:border-gold-soft hover:text-gold-soft transition-colors">Explorar</a>
-            <a href="#artistas" className="px-3 py-1.5 rounded-full border border-white/10 hover:border-gold-soft hover:text-gold-soft transition-colors">Sonido</a>
+            <Link to="/historia" className="px-3 py-1.5 rounded-full border border-white/10 hover:border-gold-soft hover:text-gold-soft hover:scale-105 hover:bg-gold-metallic/5 transition-all duration-300">Historia</Link>
+            <Link to="/eneagrama" className="px-3 py-1.5 rounded-full border border-white/10 hover:border-gold-soft hover:text-gold-soft hover:scale-105 hover:bg-gold-metallic/5 transition-all duration-300">Eneagrama</Link>
+            <Link to="/sentir" className="px-3 py-1.5 rounded-full border border-white/10 hover:border-gold-soft hover:text-gold-soft hover:scale-105 hover:bg-gold-metallic/5 transition-all duration-300">Sentir</Link>
+            <Link to="/sonido" className="px-3 py-1.5 rounded-full border border-white/10 hover:border-gold-soft hover:text-gold-soft hover:scale-105 hover:bg-gold-metallic/5 transition-all duration-300">Sonido</Link>
           </div>
         </div>
       </div>
