@@ -2,19 +2,10 @@ import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, NavLink } from 'react-router-dom';
 import logoImage from '../assets/brand_logo.png';
-
-const links = [
-  { to: '/historia', label: 'Historia' },
-  { to: '/eneagrama', label: 'Eneagrama' },
-  { to: '/sentir', label: 'Sentir' },
-  { to: '/explorar', label: 'Explorar' },
-  { to: '/sonido', label: 'Sonido' },
-  { to: '/rituales', label: 'Rituales' },
-  { to: '/nosotros', label: 'Nosotros' },
-  { to: '/contacto', label: 'Contacto' },
-];
+import { useLang } from '../context/LanguageContext';
 
 const Nav = () => {
+  const { t } = useLang();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -46,7 +37,7 @@ const Nav = () => {
         </Link>
 
         <ul className="hidden lg:flex items-center gap-7">
-          {links.map((l) => (
+          {t.nav.links.map((l) => (
             <li key={l.to}>
               <NavLink
                 to={l.to}
@@ -84,7 +75,7 @@ const Nav = () => {
       {open && (
         <div className="lg:hidden bg-black-deep/95 backdrop-blur-md border-t border-white/5">
           <ul className="flex flex-col px-6 py-4 gap-4">
-            {links.map((l) => (
+            {t.nav.links.map((l) => (
               <li key={l.to}>
                 <NavLink
                   to={l.to}

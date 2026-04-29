@@ -1,41 +1,13 @@
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import Hero from '../components/Hero';
+import { useLang } from '../context/LanguageContext';
 
-const navCards = [
-  {
-    to: '/historia',
-    label: 'Historia',
-    desc: 'El origen de la marca, contado en su propia voz.',
-  },
-  {
-    to: '/eneagrama',
-    label: 'Eneagrama',
-    desc: 'Nueve pilares que configuran la experiencia.',
-  },
-  {
-    to: '/sentir',
-    label: 'Sentir',
-    desc: 'Prácticas para habitar el presente.',
-  },
-  {
-    to: '/explorar',
-    label: 'Explorar',
-    desc: 'Espacios y estados para descubrir.',
-  },
-  {
-    to: '/sonido',
-    label: 'Sonido',
-    desc: 'Artistas y frecuencias que acompañan el ritual.',
-  },
-  {
-    to: '/rituales',
-    label: 'Rituales',
-    desc: 'La mercancía, pensada como pieza de colección.',
-  },
-];
+const routes = ['/historia', '/eneagrama', '/sentir', '/explorar', '/sonido', '/rituales'];
 
 const HomePage = () => {
+  const { t } = useLang();
+
   return (
     <>
       <Hero />
@@ -46,19 +18,19 @@ const HomePage = () => {
         <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
           <div className="text-center mb-12">
             <span className="text-gold-soft uppercase tracking-[0.3em] text-xs font-semibold mb-4 block">
-              El portal
+              {t.home.sectionLabel}
             </span>
             <h2 className="text-4xl md:text-5xl font-playfair text-white-ivory">
-              Elige por dónde entrar
+              {t.home.sectionTitle}
             </h2>
             <div className="w-16 h-[2px] bg-gold-metallic mx-auto mt-6" />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-            {navCards.map((card) => (
+            {t.home.cards.map((card, i) => (
               <Link
-                key={card.to}
-                to={card.to}
+                key={routes[i]}
+                to={routes[i]}
                 className="group relative p-7 md:p-8 rounded-2xl border border-white/10 bg-black-carbon/40 hover:border-gold-metallic/60 hover:bg-black-carbon/70 transition-all duration-500 overflow-hidden will-change-transform hover:-translate-y-1"
               >
                 <div className="absolute -top-20 -right-20 w-40 h-40 bg-gold-metallic/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />

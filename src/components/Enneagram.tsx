@@ -1,19 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { Link } from 'react-router-dom';
-
-/* ── Pilares del Eneagrama Dorado ── */
-const pillars = [
-  { label: 'Cuerpo',        description: 'El templo físico. Donde el ritual comienza y la transformación se ancla.' },
-  { label: 'Mente',         description: 'Claridad sin ruido. El pensamiento elevado que precede toda creación.' },
-  { label: 'Espíritu',      description: 'La chispa invisible que conecta todo. Presencia pura, sin forma.' },
-  { label: 'Luz',           description: 'La frecuencia que ilumina lo que merece ser visto. Brilla sin pedir permiso.' },
-  { label: 'Sombra',        description: 'Lo que no se ve también es sagrado. La sombra es donde nace la profundidad.' },
-  { label: 'Unión',         description: 'El hilo dorado entre almas que vibran en la misma frecuencia.' },
-  { label: 'Propósito',     description: 'La razón silenciosa que sostiene cada paso. Brújula del alma.' },
-  { label: 'Creación',      description: 'El acto de dar forma a lo invisible. Cada gesto es una obra.' },
-  { label: 'Trascendencia', description: 'Cruzar el umbral. Lo que queda cuando todo lo demás se disuelve.' },
-];
+import { useLang } from '../context/LanguageContext';
+import type { PillarT } from '../i18n/translations';
 
 /* ── Geometría: Amor (índice 8) arriba ── */
 const SIZE = 560;
@@ -27,7 +16,7 @@ function pointOnCircle(index: number, total: number) {
   return { x: CX + R * Math.cos(angle), y: CY + R * Math.sin(angle), angle };
 }
 
-const points = pillars.map((_, i) => pointOnCircle(i, 9));
+const points = Array.from({ length: 9 }, (_, i) => pointOnCircle(i, 9));
 
 /* Líneas internas clásicas del eneagrama (numeración 1-9 → índices 0-8):
    Hexada: 1→4→2→8→5→7→1  =  [0,3,1,7,4,6]
@@ -50,9 +39,10 @@ const PARTICLES = Array.from({ length: 6 }, (_, i) => ({
 interface SVGProps {
   activeIndex: number | null;
   onSelect: (i: number) => void;
+  pillars: PillarT[];
 }
 
-const EnneagramSVG = ({ activeIndex, onSelect }: SVGProps) => {
+const EnneagramSVG = ({ activeIndex, onSelect, pillars }: SVGProps) => {
   const isLineActive = (a: number, b: number) =>
     activeIndex !== null && (a === activeIndex || b === activeIndex);
 
@@ -289,6 +279,9 @@ const EnneagramSVG = ({ activeIndex, onSelect }: SVGProps) => {
 
 /* ── Sección principal ── */
 const Enneagram = () => {
+  const { t } = useLang();
+  const e = t.enneagram;
+  const pillars = e.pillars;
   const sectionRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const autoplayRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -444,23 +437,21 @@ const Enneagram = () => {
         {/* Header */}
         <div className="enn-header text-center mb-8 md:mb-12">
           <span className="text-gold-soft uppercase tracking-[0.3em] text-sm font-semibold mb-4 block">
-            Geometría Sagrada
+            {e.label}
           </span>
           <h2 className="text-4xl md:text-6xl font-playfair mb-6 text-glow">
-            El Eneagrama Dorado
+            {e.h2}
           </h2>
           <p className="text-gray-smoke max-w-2xl mx-auto text-lg leading-relaxed">
-            No es un logo. Es un portal de memoria, vibración y evolución.
+            {e.p1}
             <br className="hidden md:block" />
-            <span className="text-gold-soft/90">
-              Toca un pilar para revelar su frecuencia.
-            </span>
+            <span className="text-gold-soft/90">{e.p2}</span>
           </p>
         </div>
 
         {/* Eneagrama centrado y grande, con label flotante en el centro */}
         <div className="enn-svg-wrap relative mx-auto mb-8 md:mb-12 w-full max-w-[560px] aspect-square">
-          <EnneagramSVG activeIndex={activeIndex} onSelect={handleSelect} />
+          <EnneagramSVG activeIndex={activeIndex} onSelect={handleSelect} pillars={pillars} />
 
           {/* Label flotante en el centro del eneagrama */}
           <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center">
@@ -482,16 +473,14 @@ const Enneagram = () => {
           {activeIndex !== null ? (
             <div ref={descRef}>
               <span className="text-gold-metallic uppercase tracking-[0.25em] text-xs font-semibold mb-4 block">
-                Pilar {activeIndex + 1} de 9
+                {e.pillar} {activeIndex + 1} {e.of} 9
               </span>
               <p className="text-gray-smoke text-lg md:text-xl leading-relaxed font-cormorant italic">
                 {pillars[activeIndex].description}
               </p>
             </div>
           ) : (
-            <div className="text-gray-smoke text-lg italic">
-              Toca un punto del eneagrama para revelar su significado.
-            </div>
+            <div className="text-gray-smoke text-lg italic">{e.noSelection}</div>
           )}
 
           {/* Indicadores */}
@@ -516,11 +505,9 @@ const Enneagram = () => {
           <div className="w-12 h-[1px] bg-gold-metallic/40 mx-auto" />
 
           <p className="text-xl md:text-2xl font-cormorant leading-relaxed text-white-ivory">
-            Nueve puntos. Un solo movimiento.
+            {e.prose1}
             <br />
-            <span className="text-gold-metallic italic">
-              El que conecta lo que eres con lo que puedes llegar a ser.
-            </span>
+            <span className="text-gold-metallic italic">{e.prose2}</span>
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
@@ -528,19 +515,19 @@ const Enneagram = () => {
               to="/sentir"
               className="group px-5 py-2.5 rounded-full border border-gold-metallic/40 text-gold-soft text-xs uppercase tracking-[0.25em] hover:bg-gold-metallic/10 hover:text-gold-metallic hover:scale-105 hover:border-gold-metallic transition-all duration-300"
             >
-              Sentir el ritual
+              {e.cta1}
             </Link>
             <Link
               to="/explorar"
               className="group px-5 py-2.5 rounded-full border border-gold-metallic/40 text-gold-soft text-xs uppercase tracking-[0.25em] hover:bg-gold-metallic/10 hover:text-gold-metallic hover:scale-105 hover:border-gold-metallic transition-all duration-300"
             >
-              Elegir tu puerta
+              {e.cta2}
             </Link>
             <Link
               to="/rituales"
               className="group relative px-5 py-2.5 rounded-full bg-gold-metallic text-black-deep text-xs uppercase tracking-[0.25em] font-semibold hover:glow-gold hover:scale-105 transition-all duration-300 overflow-hidden"
             >
-              <span className="relative z-10">Comprar mercancía</span>
+              <span className="relative z-10">{e.cta3}</span>
               <span aria-hidden className="absolute inset-y-0 -left-1/3 w-1/3 bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 opacity-0 group-hover:opacity-100 group-hover:translate-x-[400%] transition-all duration-[900ms] ease-out" />
             </Link>
           </div>

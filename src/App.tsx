@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { LanguageProvider } from './context/LanguageContext';
 import { useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -51,9 +52,11 @@ const Shell = () => (
 
 function App() {
   return (
-    <BrowserRouter>
-      <Shell />
-    </BrowserRouter>
+    <LanguageProvider>
+      <BrowserRouter>
+        <Shell />
+      </BrowserRouter>
+    </LanguageProvider>
   );
 }
 
