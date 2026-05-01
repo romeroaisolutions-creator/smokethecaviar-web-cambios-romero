@@ -164,10 +164,6 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-30 opacity-50 hero-text">
-        <span className="text-xs uppercase tracking-widest text-gold-metallic font-semibold">{t.hero.scroll}</span>
-        <div className="w-[1px] h-12 bg-gradient-to-b from-gold-metallic to-transparent animate-pulse" />
-      </div>
     </section>
   );
 };
