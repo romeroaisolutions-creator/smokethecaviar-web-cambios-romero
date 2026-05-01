@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { Moon, Wind, Flame, Eye, Infinity as InfinityIcon, Heart } from 'lucide-react';
-import sentirImg from '../assets/sentir.jpg';
+import sentirImg from '../assets/main_hero.jpg';
 import { useLang } from '../context/LanguageContext';
 
 const icons = [Wind, Moon, Flame, Eye, InfinityIcon, Heart];

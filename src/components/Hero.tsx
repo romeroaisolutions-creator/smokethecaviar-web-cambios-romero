@@ -4,7 +4,7 @@ import { ArrowRight, ShoppingBag, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
 
-import heroImage from '../assets/main_hero.jpg';
+import heroImage from '../assets/sentir.jpg';
 import logoImage from '../assets/brand_logo.png';
 import brandTextImg from '../assets/brand_text.png';
 
