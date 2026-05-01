@@ -6,7 +6,6 @@ import { useLang } from '../context/LanguageContext';
 
 import heroImage from '../assets/sentir.jpg';
 import logoImage from '../assets/brand_logo.png';
-import brandTextImg from '../assets/brand_text.png';
 
 const Hero = () => {
   const { t } = useLang();
@@ -85,7 +84,6 @@ const Hero = () => {
         <div ref={textRef} className="max-w-xl will-change-transform">
           <div className="flex items-center gap-4 mb-16 hero-text">
             <img src={logoImage} alt="SMOKETHECAVIAR Logo" className="h-16 object-contain" />
-            <img src={brandTextImg} alt="SMOKETHECAVIAR" className="h-8 md:h-10 object-contain" />
           </div>
 
           <h1 className="text-5xl lg:text-7xl mb-6 leading-tight hero-text text-glow">
