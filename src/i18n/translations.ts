@@ -257,8 +257,8 @@ export const translations: Record<LangKey, LangData> = {
 
     products: {
       label: 'Mercancía',
-      h2: 'Vestir el Manifiesto',
-      p: 'Prendas de culto. El símbolo dorado tejido en la piel cotidiana.',
+      h2: 'Lujo Sustentable',
+      p: 'Ropa de alta vibración — 100% algodón, materiales nobles y conciencia de origen. Vestir el símbolo es un acto de presencia.',
       filters: [
         { key: 'all',     label: 'Todo'        },
         { key: 'tee',     label: 'Playeras'    },
@@ -268,9 +268,9 @@ export const translations: Record<LangKey, LangData> = {
       ],
       buy: 'Adquirir', processing: 'Procesando', paymentLabel: 'Pagos seguros vía Mercado Pago',
       errorMsg: 'Hubo un error al iniciar el pago. Intenta de nuevo.',
-      badge1: { title: 'Edición limitada',  p: 'Cada pieza, una declaración.'         },
-      badge2: { title: 'Diseño autoral',    p: 'Firma propia. Símbolo intransferible.' },
-      badge3: { title: 'Ritual + Estilo',   p: 'La marca como segunda piel.'           },
+      badge1: { title: 'Lujo Sustentable',       p: '100% algodón de alta vibración. Sin atajos, sin sintéticos.'      },
+      badge2: { title: 'Edición Limitada',       p: 'Cada pieza, una declaración consciente.'                           },
+      badge3: { title: 'Alta Vibración',         p: 'Materiales nobles que se sienten en la piel y en el espíritu.'     },
       categories: {
         'Playera Oversize':          'Playera Oversize',
         'Sudadera Premium':          'Sudadera Premium',
@@ -487,8 +487,8 @@ export const translations: Record<LangKey, LangData> = {
 
     products: {
       label: 'Merch',
-      h2: 'Wear the Manifesto',
-      p: 'Cult pieces. The golden symbol woven into everyday skin.',
+      h2: 'Sustainable Luxury',
+      p: 'High-vibration clothing — 100% cotton, noble materials, conscious sourcing. Wearing the symbol is an act of presence.',
       filters: [
         { key: 'all',    label: 'All'         },
         { key: 'tee',    label: 'Tees'        },
@@ -498,9 +498,9 @@ export const translations: Record<LangKey, LangData> = {
       ],
       buy: 'Acquire', processing: 'Processing', paymentLabel: 'Secure payments via Mercado Pago',
       errorMsg: 'There was an error starting the payment. Please try again.',
-      badge1: { title: 'Limited edition', p: 'Every piece, a declaration.'         },
-      badge2: { title: 'Original design', p: 'Own signature. Untransferable symbol.' },
-      badge3: { title: 'Ritual + Style',  p: 'The brand as a second skin.'           },
+      badge1: { title: 'Sustainable Luxury',  p: '100% high-vibration cotton. No shortcuts, no synthetics.'         },
+      badge2: { title: 'Limited Edition',    p: 'Every piece, a conscious declaration.'                             },
+      badge3: { title: 'High Vibration',     p: 'Noble materials felt on the skin and in the spirit.'               },
       categories: {
         'Playera Oversize':         'Oversize Tee',
         'Sudadera Premium':         'Premium Hoodie',
