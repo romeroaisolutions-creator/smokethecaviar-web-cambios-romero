@@ -50,7 +50,7 @@ const CallToAction = () => {
         </h2>
 
         <Link
-          to="/contacto"
+          to="/experiencia"
           className="group relative px-10 py-6 md:px-16 md:py-8 bg-black-deep border border-gold-metallic text-gold-metallic uppercase tracking-[0.2em] font-semibold text-sm md:text-base rounded-full overflow-hidden transition-all duration-700 hover:border-transparent hover:text-black-deep hover:glow-gold-strong hover:scale-105 active:scale-95 inline-flex items-center gap-3"
         >
           <Sparkles className="w-4 h-4 relative z-10 transition-transform duration-500 group-hover:rotate-180" />

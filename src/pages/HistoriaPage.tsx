@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import lifestyleImg from '../assets/pool_lifestyle.jpg';
 import sentirImg from '../assets/sentir.jpg';
+import logoImage from '../assets/brand_logo.png';
 import { useLang } from '../context/LanguageContext';
 
 const HistoriaPage = () => {
@@ -37,12 +38,15 @@ const HistoriaPage = () => {
           <span className="historia-fade text-gold-soft uppercase tracking-[0.3em] text-xs font-semibold mb-5 block">
             {h.label}
           </span>
-          <h1 className="historia-fade text-5xl md:text-7xl font-playfair leading-tight mb-6">
+          <img
+            src={logoImage}
+            alt="SMOKETHECAVIAR"
+            className="historia-fade h-40 md:h-56 mx-auto mb-8 mix-blend-screen opacity-90"
+          />
+          <h1 className="historia-fade text-2xl md:text-4xl font-playfair leading-tight mb-6 text-white-ivory max-w-3xl mx-auto">
             {h.h1a}
-            <br />
-            <span className="italic text-gold-metallic">{h.h1b}</span>
           </h1>
-          <p className="historia-fade max-w-2xl mx-auto text-lg text-gray-smoke leading-relaxed">
+          <p className="historia-fade max-w-2xl mx-auto text-base md:text-lg text-gray-smoke leading-relaxed">
             {h.subtitle}
           </p>
         </div>

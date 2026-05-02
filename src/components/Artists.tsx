@@ -3,6 +3,8 @@ import gsap from 'gsap';
 import { Play } from 'lucide-react';
 import brunoImg from '../assets/ai_artist_bruno_1776036091766.jpeg';
 import lucyImg from '../assets/ai_artist_lucy_1776036107775.jpeg';
+import creadorLogoImg from '../../logo_creador_records/Logo_creador_records.png';
+import creadorLetrasImg from '../../logo_creador_records/Letras_logo_creador_records.png';
 import { useLang } from '../context/LanguageContext';
 
 const images: Record<string, string> = { bruno: brunoImg, lucy: lucyImg };
@@ -41,6 +43,13 @@ const Artists = () => {
           <span className="text-gold-soft uppercase tracking-[0.3em] text-sm font-semibold mb-4 block">{ar.label}</span>
           <h2 className="text-5xl md:text-6xl font-playfair text-white-ivory mb-6">{ar.h2}</h2>
           <p className="text-gray-smoke max-w-2xl mx-auto text-lg leading-relaxed">{ar.p}</p>
+        </div>
+
+        <div className="artist-header mt-10 mb-14 md:mb-16 flex flex-col items-center gap-6 border-t border-white/5 pt-10">
+          <div className="flex items-center gap-6">
+            <img src={creadorLogoImg} alt="Creador Records" className="h-16 md:h-20 object-contain mix-blend-screen opacity-90" />
+            <img src={creadorLetrasImg} alt="Creador Records" className="h-10 md:h-14 object-contain mix-blend-screen opacity-90" />
+          </div>
         </div>
 
         <div className="artists-grid grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24">

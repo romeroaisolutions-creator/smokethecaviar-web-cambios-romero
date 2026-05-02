@@ -3,7 +3,7 @@ import { ArrowUpRight } from 'lucide-react';
 import Hero from '../components/Hero';
 import { useLang } from '../context/LanguageContext';
 
-const routes = ['/historia', '/eneagrama', '/sentir', '/explorar', '/sonido', '/rituales'];
+const routes = ['/origen', '/eneagrama', '/sentir', '/explorar', '/sonido', '/rituales'];
 
 const HomePage = () => {
   const { t } = useLang();

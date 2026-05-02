@@ -1,7 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
-import { Mail, Send } from 'lucide-react';
+import { Mail, Send, MessageCircleHeart } from 'lucide-react';
 import { useLang } from '../context/LanguageContext';
+
+interface Experience {
+  id: string;
+  message: string;
+  date: string;
+}
 
 const IconInstagram = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" {...props}>
@@ -25,6 +31,16 @@ const socialIcons = [IconInstagram, IconFacebook, IconYoutube];
 const socialUrls = ['https://www.instagram.com/creador_records?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', '#', '#'];
 const socialColors = ['from-pink-500/20 to-purple-500/20', 'from-blue-500/20 to-indigo-500/20', 'from-red-500/20 to-rose-500/20'];
 
+const STORAGE_KEY = 'stc_experiences';
+
+function loadExperiences(): Experience[] {
+  try {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+  } catch {
+    return [];
+  }
+}
+
 const Contact = () => {
   const { t } = useLang();
   const co = t.contact;
@@ -32,6 +48,7 @@ const Contact = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [sent, setSent] = useState(false);
+  const [experiences, setExperiences] = useState<Experience[]>(loadExperiences);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -52,6 +69,14 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const newExp: Experience = {
+      id: Date.now().toString(),
+      message,
+      date: new Date().toLocaleDateString('es-MX', { year: 'numeric', month: 'long', day: 'numeric' }),
+    };
+    const updated = [newExp, ...experiences];
+    setExperiences(updated);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
     setSent(true);
     setTimeout(() => { setSent(false); setEmail(''); setMessage(''); }, 3000);
   };
@@ -98,10 +123,10 @@ const Contact = () => {
               placeholder={co.messagePlaceholder} rows={4}
               className="w-full bg-black-deep border border-white/10 rounded-xl px-4 py-3 text-white-ivory placeholder:text-gray-smoke/60 focus:border-gold-metallic/50 focus:outline-none transition-colors resize-none" />
             <button type="submit" disabled={sent}
-              className="group relative w-full py-4 bg-gold-metallic text-black-deep font-semibold rounded-xl flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-95 transition-all duration-300 glow-gold disabled:opacity-70 overflow-hidden hover:shadow-[0_0_30px_rgba(212,175,55,0.5)]">
+              className="group relative w-full py-4 bg-gold-metallic text-black-deep font-semibold rounded-xl flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-95 transition-all duration-300 glow-gold disabled:opacity-70 overflow-hidden hover:shadow-[0_0_30px_rgba(212,175,55,0.5)] text-sm md:text-base px-4">
               {sent ? co.sent : (
                 <>
-                  <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300" />
+                  <Send className="w-4 h-4 shrink-0 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300" />
                   {co.submit}
                 </>
               )}
@@ -109,6 +134,34 @@ const Contact = () => {
             </button>
           </div>
         </form>
+
+        {experiences.length > 0 && (
+          <div className="mt-16 md:mt-20">
+            <div className="flex items-center justify-center gap-3 mb-10">
+              <div className="h-px flex-1 bg-white/5" />
+              <div className="flex items-center gap-2 text-gold-soft">
+                <MessageCircleHeart className="w-4 h-4" />
+                <span className="text-xs uppercase tracking-[0.3em] font-semibold">
+                  {t.contact.label === 'Experiencia' ? 'Experiencias compartidas' : 'Shared Experiences'}
+                </span>
+              </div>
+              <div className="h-px flex-1 bg-white/5" />
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {experiences.map((exp) => (
+                <div key={exp.id} className="group relative p-6 rounded-2xl bg-black-carbon border border-white/5 hover:border-gold-metallic/30 transition-all duration-500">
+                  <div className="absolute top-4 right-4 w-6 h-6 rounded-full bg-gold-metallic/10 border border-gold-metallic/20 flex items-center justify-center">
+                    <MessageCircleHeart className="w-3 h-3 text-gold-soft" />
+                  </div>
+                  <p className="text-white-ivory text-sm leading-relaxed font-cormorant italic text-lg mb-4 pr-8">
+                    "{exp.message}"
+                  </p>
+                  <p className="text-gray-smoke/50 text-[10px] uppercase tracking-widest">{exp.date}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

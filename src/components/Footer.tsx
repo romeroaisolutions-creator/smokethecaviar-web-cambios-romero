@@ -47,7 +47,7 @@ const Footer = () => {
           <Link to="/sonido"    className="hover:text-gold-metallic transition-colors">{f.navLinks.artistas}</Link>
           <Link to="/sentir"    className="hover:text-gold-metallic transition-colors">{f.navLinks.conciencia}</Link>
           <Link to="/nosotros"  className="hover:text-gold-metallic transition-colors">{f.navLinks.nosotros}</Link>
-          <Link to="/contacto"  className="hover:text-gold-metallic transition-colors">{f.navLinks.contacto}</Link>
+          <Link to="/experiencia"  className="hover:text-gold-metallic transition-colors">{f.navLinks.contacto}</Link>
         </div>
 
         {/* Language switcher */}

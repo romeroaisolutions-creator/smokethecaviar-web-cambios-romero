@@ -35,6 +35,7 @@ const Shell = () => (
     <div className="relative z-10">
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/origen" element={<HistoriaPage />} />
         <Route path="/historia" element={<HistoriaPage />} />
         <Route path="/eneagrama" element={<EneagramaPage />} />
         <Route path="/sentir" element={<SentirPage />} />
@@ -42,6 +43,7 @@ const Shell = () => (
         <Route path="/sonido" element={<SonidoPage />} />
         <Route path="/rituales" element={<RitualesPage />} />
         <Route path="/nosotros" element={<NosotrosPage />} />
+        <Route path="/experiencia" element={<ContactoPage />} />
         <Route path="/contacto" element={<ContactoPage />} />
         <Route path="*" element={<HomePage />} />
       </Routes>

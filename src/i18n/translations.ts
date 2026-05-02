@@ -102,14 +102,14 @@ export const translations: Record<LangKey, LangData> = {
   es: {
     nav: {
       links: [
-        { to: '/historia',  label: 'Historia'   },
-        { to: '/eneagrama', label: 'Eneagrama'  },
-        { to: '/sentir',    label: 'Sentir'      },
-        { to: '/explorar',  label: 'Explorar'    },
-        { to: '/sonido',    label: 'Sonido'      },
-        { to: '/rituales',  label: 'Rituales'    },
-        { to: '/nosotros',  label: 'Nosotros'    },
-        { to: '/contacto',  label: 'Contacto'    },
+        { to: '/origen',      label: 'Origen'      },
+        { to: '/eneagrama',   label: 'Eneagrama'   },
+        { to: '/sentir',      label: 'Sentir'       },
+        { to: '/explorar',    label: 'Explorar'     },
+        { to: '/sonido',      label: 'Sonido'       },
+        { to: '/rituales',    label: 'Rituales'     },
+        { to: '/nosotros',    label: 'Nosotros'     },
+        { to: '/experiencia', label: 'Experiencia'  },
       ],
     },
 
@@ -123,7 +123,7 @@ export const translations: Record<LangKey, LangData> = {
       jumpTo: 'Saltar a',
       scroll: 'Scroll',
       chips: [
-        { label: 'Historia',   to: '/historia'   },
+        { label: 'Origen',     to: '/origen'     },
         { label: 'Eneagrama',  to: '/eneagrama'  },
         { label: 'Sentir',     to: '/sentir'      },
         { label: 'Sonido',     to: '/sonido'      },
@@ -134,7 +134,7 @@ export const translations: Record<LangKey, LangData> = {
       sectionLabel: 'El portal',
       sectionTitle: 'Elige por dónde entrar',
       cards: [
-        { label: 'Historia',   desc: 'El origen de la marca, contado en su propia voz.'               },
+        { label: 'Origen',     desc: 'El origen de la marca, contado en su propia voz.'               },
         { label: 'Eneagrama',  desc: 'Nueve pilares que configuran la experiencia.'                    },
         { label: 'Sentir',     desc: 'Prácticas para habitar el presente.'                             },
         { label: 'Explorar',   desc: 'Espacios y estados para descubrir.'                              },
@@ -144,15 +144,15 @@ export const translations: Record<LangKey, LangData> = {
     },
 
     historia: {
-      label: 'La historia',
-      h1a: 'Antes del humo,',
-      h1b: 'existió la pregunta.',
-      subtitle: 'Una marca no es un logo. Es una manera de mirar el mundo. Esta es la nuestra.',
+      label: 'El origen',
+      h1a: 'Smoke the Caviar nace de una idea simple: No todos ven el mismo mundo.',
+      h1b: '',
+      subtitle: 'Una marca no es un logo. "Es para los que juegan en otra liga. No todos están hechos para esto… Es para los que recuerdan que siempre hubo algo más." Es una manera de mirar el mundo. Esta es la nuestra.',
       manifesto: '"Somos sombra con propósito y luz que nunca se olvida."',
       chapters: [
         {
           year: 'Capítulo I',
-          title: 'El silencio antes del humo',
+          title: 'El silencio antes del origen',
           text: 'SMOKETHECAVIAR nace de una pregunta incómoda: ¿qué queda del lujo cuando se le quita la apariencia? La respuesta que encontramos no se mostraba — se respiraba. Una pausa, un instante, una decisión consciente.',
         },
         {
@@ -163,7 +163,7 @@ export const translations: Record<LangKey, LangData> = {
         {
           year: 'Capítulo III',
           title: 'Luz que nunca se olvida',
-          text: 'Lo que dejamos en quien nos elige no es un producto: es una marca interior. Un recuerdo sensorial. Por eso curamos cada textura, cada nota y cada palabra como si fueran una sola cosa — porque lo son.',
+          text: 'No entregamos productos, dejamos presencia. Lo que nace de nosotros no se consume… se queda. Somos ese instante que no se borra, esa sensación que vuelve sin ser llamada, esa huella que aprende a vivir dentro de las personas. Cada obra es un encuentro entre lo invisible y lo eterno, diseñado para permanecer en la memoria como algo que no se puede explicar, solo sentir. Vibra bonito.',
         },
       ],
       img0: { label: 'Origen',   caption: 'Nacer es elegir despertar.'           },
@@ -202,7 +202,7 @@ export const translations: Record<LangKey, LangData> = {
       quote: '"El universo no está afuera. Tu cuerpo es el templo y la meditación es la llave."',
       bodyEm: 'recordar',
       body2: 'En un mundo de ruido permanente, la verdadera disrupción es el silencio. Cada respiración consciente es una revolución íntima, un regreso al centro que nunca se fue.',
-      body3: 'El yoga no es estiramiento: es unión. La meditación no es ausencia: es presencia absoluta. Nuestros rituales acompañan el descenso hacia ese estado primordial donde cuerpo y espíritu comparten la misma frecuencia.',
+      body3: 'La meditación no es ausencia: es presencia absoluta. Nuestros rituales acompañan el descenso hacia ese estado primordial donde cuerpo y espíritu comparten la misma frecuencia.',
       tags: ['Yoga', 'Meditación', 'Ritual'],
       practices: [
         { title: 'Pranayama',          text: 'Respiración consciente. La puerta entre el cuerpo y el espíritu — inhala luz, exhala densidad.' },
@@ -246,7 +246,7 @@ export const translations: Record<LangKey, LangData> = {
     artists: {
       label: 'Digital Gods',
       h2: 'Musa Generativa',
-      p: 'Arte y sonido creados 100% con inteligencia artificial. Una nueva era donde el lujo también se escucha.',
+      p: 'Creamos arte desde el corazón y música a través de inteligencia artificial. Fusionamos lo humano con lo digital para dar vida a una nueva era de lujo sensorial … donde el lujo trasciende los sentidos y también se escucha.',
       list: [
         { id: 'bruno', role: 'Audio Alchemist', desc: 'Sonidos esculpidos algorítmicamente para acompañar tus rituales.' },
         { id: 'lucy',  role: 'Sonic Architect', desc: 'Sonidos esculpidos algorítmicamente para acompañar tus rituales.' },
@@ -291,9 +291,9 @@ export const translations: Record<LangKey, LangData> = {
       p2: 'Fusionamos diseño contemporáneo, sonido generativo y geometría sagrada para crear piezas dirigidas a quienes entienden que la opulencia moderna se mide en calma, presencia y claridad mental.',
       p3: 'Cada prenda, cada textura, cada sonido de nuestros artistas fue pensado para acompañar una vida donde lo exclusivo ya no es lo que tienes — sino lo que eres.',
       pillars: [
-        { title: 'Exclusividad', text: 'No fabricamos en masa. Cada pieza es una edición limitada para coleccionistas del bienestar.' },
-        { title: 'Autenticidad', text: 'Diseño autoral, materiales nobles y trazabilidad total. Sin atajos, sin imitaciones.' },
-        { title: 'Ritual',       text: 'No vendemos productos: diseñamos experiencias que transforman tu relación con el momento.' },
+        { title: 'Exclusividad', text: 'No fabricamos en masa. Cada pieza es una edición limitada para quienes entienden el lujo, como una experiencia única.' },
+        { title: 'Autenticidad', text: 'No es producción… es manifestación. Ropa creada para vibrar en alta frecuencia. Diseño que nace del alma. Materia noble que honra la Tierra y su origen. Transparencia total: cada pieza tiene historia, no solo fabricación. Aquí no hay atajos… solo creación consciente convertida en lujo.' },
+        { title: 'Ritual',       text: 'No es consumo… es experiencia. Cada pieza activa un momento consciente. Diseñado para elevar tu frecuencia y reconectar con el presente. Aquí vestir no es rutina… es ritual de transformación.' },
       ],
     },
 
@@ -305,24 +305,24 @@ export const translations: Record<LangKey, LangData> = {
     },
 
     contact: {
-      label: 'Conéctate',
-      h2: 'Contacto',
+      label: 'Experiencia',
+      h2: 'Comparte tu experiencia',
       p: 'Escríbenos, síguenos, o únete al ritual. Las puertas del círculo están abiertas.',
       socials: [
         { name: 'Instagram', handle: '@creador_records' },
         { name: 'Facebook',  handle: 'Próximamente'     },
         { name: 'YouTube',   handle: 'Próximamente'     },
       ],
-      formTitle: 'Escríbenos directamente',
+      formTitle: 'Comparte tu experiencia',
       emailPlaceholder: 'Tu email',
-      messagePlaceholder: 'Tu mensaje',
-      submit: 'Enviar mensaje',
+      messagePlaceholder: 'Comparte tu experiencia con Smoke the Caviar…',
+      submit: 'Gracias por compartir tu experiencia',
       sent: 'Enviado — Gracias',
     },
 
     footer: {
       manifesto: '"Somos sombra con propósito y luz que nunca se olvida."',
-      navLinks: { inicio: 'Inicio', productos: 'Mercancía', artistas: 'Artistas', conciencia: 'Sentir', nosotros: 'Nosotros', contacto: 'Contacto' },
+      navLinks: { inicio: 'Inicio', productos: 'Mercancía', artistas: 'Artistas', conciencia: 'Sentir', nosotros: 'Nosotros', contacto: 'Experiencia' },
       language: 'Idioma', es: 'Español', en: 'Inglés',
       rights: 'Todos los derechos reservados.', terms: 'Términos', privacy: 'Privacidad',
     },
@@ -332,14 +332,14 @@ export const translations: Record<LangKey, LangData> = {
   en: {
     nav: {
       links: [
-        { to: '/historia',  label: 'Story'    },
-        { to: '/eneagrama', label: 'Enneagram' },
-        { to: '/sentir',    label: 'Feel'      },
-        { to: '/explorar',  label: 'Explore'   },
-        { to: '/sonido',    label: 'Sound'     },
-        { to: '/rituales',  label: 'Rituals'   },
-        { to: '/nosotros',  label: 'About'     },
-        { to: '/contacto',  label: 'Contact'   },
+        { to: '/origen',      label: 'Origin'     },
+        { to: '/eneagrama',   label: 'Enneagram'  },
+        { to: '/sentir',      label: 'Feel'        },
+        { to: '/explorar',    label: 'Explore'     },
+        { to: '/sonido',      label: 'Sound'       },
+        { to: '/rituales',    label: 'Rituals'     },
+        { to: '/nosotros',    label: 'About'       },
+        { to: '/experiencia', label: 'Experience'  },
       ],
     },
 
@@ -353,7 +353,7 @@ export const translations: Record<LangKey, LangData> = {
       jumpTo: 'Jump to',
       scroll: 'Scroll',
       chips: [
-        { label: 'Story',      to: '/historia'   },
+        { label: 'Origin',     to: '/origen'     },
         { label: 'Enneagram',  to: '/eneagrama'  },
         { label: 'Feel',       to: '/sentir'      },
         { label: 'Sound',      to: '/sonido'      },
@@ -364,7 +364,7 @@ export const translations: Record<LangKey, LangData> = {
       sectionLabel: 'The portal',
       sectionTitle: 'Choose your entry point',
       cards: [
-        { label: 'Story',      desc: 'The origin of the brand, told in its own voice.'           },
+        { label: 'Origin',     desc: 'The origin of the brand, told in its own voice.'           },
         { label: 'Enneagram',  desc: 'Nine pillars that shape the experience.'                   },
         { label: 'Feel',       desc: 'Practices for inhabiting the present.'                     },
         { label: 'Explore',    desc: 'Spaces and states to discover.'                            },
@@ -374,15 +374,15 @@ export const translations: Record<LangKey, LangData> = {
     },
 
     historia: {
-      label: 'The story',
-      h1a: 'Before the smoke,',
-      h1b: 'there was a question.',
-      subtitle: 'A brand is not a logo. It is a way of seeing the world. This is ours.',
+      label: 'The origin',
+      h1a: 'Smoke the Caviar was born from a simple idea: Not everyone sees the same world.',
+      h1b: '',
+      subtitle: 'A brand is not a logo. "It\'s for those who play in another league. Not everyone is made for this… It\'s for those who remember there was always something more." It is a way of seeing the world. This is ours.',
       manifesto: '"We are shadow with purpose and light that is never forgotten."',
       chapters: [
         {
           year: 'Chapter I',
-          title: 'The silence before the smoke',
+          title: 'The silence before the origin',
           text: 'SMOKETHECAVIAR was born from an uncomfortable question: what remains of luxury once appearance is stripped away? The answer we found wasn\'t shown — it was breathed. A pause, an instant, a conscious choice.',
         },
         {
@@ -393,7 +393,7 @@ export const translations: Record<LangKey, LangData> = {
         {
           year: 'Chapter III',
           title: 'Light that is never forgotten',
-          text: 'What we leave in those who choose us is not a product: it is an inner mark. A sensory memory. That\'s why we curate every texture, every note, and every word as if they were one — because they are.',
+          text: 'We don\'t deliver products, we leave a presence. What is born from us is not consumed… it stays. We are that instant that doesn\'t fade, that sensation that returns without being called, that mark that learns to live within people. Each work is an encounter between the invisible and the eternal, designed to remain in memory as something that cannot be explained, only felt. Vibrate beautifully.',
         },
       ],
       img0: { label: 'Origin',  caption: 'To be born is to choose to awaken.'            },
@@ -432,7 +432,7 @@ export const translations: Record<LangKey, LangData> = {
       quote: '"The universe is not outside. Your body is the temple and meditation is the key."',
       bodyEm: 'remember',
       body2: 'In a world of permanent noise, true disruption is silence. Every conscious breath is an intimate revolution, a return to the center that never left.',
-      body3: 'Yoga is not stretching: it is union. Meditation is not absence: it is absolute presence. Our rituals accompany the descent into that primordial state where body and spirit share the same frequency.',
+      body3: 'Meditation is not absence: it is absolute presence. Our rituals accompany the descent into that primordial state where body and spirit share the same frequency.',
       tags: ['Yoga', 'Meditation', 'Ritual'],
       practices: [
         { title: 'Pranayama',       text: 'Conscious breathing. The gateway between body and spirit — inhale light, exhale density.' },
@@ -476,7 +476,7 @@ export const translations: Record<LangKey, LangData> = {
     artists: {
       label: 'Digital Gods',
       h2: 'Generative Muse',
-      p: 'Art and sound created 100% with artificial intelligence. A new era where luxury is also heard.',
+      p: 'We create art from the heart and music through artificial intelligence. We fuse the human with the digital to bring to life a new era of sensory luxury… where luxury transcends the senses and is also heard.',
       list: [
         { id: 'bruno', role: 'Audio Alchemist', desc: 'Algorithmically sculpted sounds to accompany your rituals.' },
         { id: 'lucy',  role: 'Sonic Architect', desc: 'Algorithmically sculpted sounds to accompany your rituals.' },
@@ -521,9 +521,9 @@ export const translations: Record<LangKey, LangData> = {
       p2: 'We merge contemporary design, generative sound, and sacred geometry to create pieces aimed at those who understand that modern opulence is measured in calm, presence, and mental clarity.',
       p3: 'Every garment, every texture, every sound from our artists was conceived to accompany a life where the exclusive is no longer what you have — but what you are.',
       pillars: [
-        { title: 'Exclusivity',  text: 'We don\'t mass produce. Each piece is a limited edition for wellness collectors.' },
-        { title: 'Authenticity', text: 'Original design, noble materials, and full traceability. No shortcuts, no imitations.' },
-        { title: 'Ritual',       text: 'We don\'t sell products: we design experiences that transform your relationship with the moment.' },
+        { title: 'Exclusivity',  text: 'We don\'t mass produce. Each piece is a limited edition for those who understand luxury as a unique experience.' },
+        { title: 'Authenticity', text: 'Not production… it\'s manifestation. Clothing created to vibrate at a high frequency. Design born from the soul. Noble materials that honor the Earth and its origin. Full transparency: each piece has a story, not just manufacturing. No shortcuts here… only conscious creation turned into luxury.' },
+        { title: 'Ritual',       text: 'Not consumption… it\'s experience. Each piece activates a conscious moment. Designed to elevate your frequency and reconnect with the present. Here, dressing is not routine… it\'s a ritual of transformation.' },
       ],
     },
 
@@ -535,24 +535,24 @@ export const translations: Record<LangKey, LangData> = {
     },
 
     contact: {
-      label: 'Connect',
-      h2: 'Contact',
+      label: 'Experience',
+      h2: 'Share Your Experience',
       p: 'Write to us, follow us, or join the ritual. The doors of the circle are open.',
       socials: [
         { name: 'Instagram', handle: '@creador_records' },
         { name: 'Facebook',  handle: 'Coming soon'      },
         { name: 'YouTube',   handle: 'Coming soon'      },
       ],
-      formTitle: 'Write to us directly',
+      formTitle: 'Share your experience',
       emailPlaceholder: 'Your email',
-      messagePlaceholder: 'Your message',
-      submit: 'Send message',
+      messagePlaceholder: 'Share your experience with Smoke the Caviar…',
+      submit: 'Thank you for sharing your experience',
       sent: 'Sent — Thank you',
     },
 
     footer: {
       manifesto: '"We are shadow with purpose and light that is never forgotten."',
-      navLinks: { inicio: 'Home', productos: 'Merch', artistas: 'Artists', conciencia: 'Feel', nosotros: 'About', contacto: 'Contact' },
+      navLinks: { inicio: 'Home', productos: 'Merch', artistas: 'Artists', conciencia: 'Feel', nosotros: 'About', contacto: 'Experience' },
       language: 'Language', es: 'Spanish', en: 'English',
       rights: 'All rights reserved.', terms: 'Terms', privacy: 'Privacy',
     },
